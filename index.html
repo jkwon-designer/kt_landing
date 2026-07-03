@@ -205,8 +205,12 @@
 
   /* ===== TAB NAV ===== */
   .tabnav{
-    background: var(--black);
-    border-top: 1px solid rgba(255,255,255,0.08);
+    position: sticky;
+    top: 68px; /* header 높이만큼 내려서 GNB 바로 밑에 고정 */
+    z-index: 90; /* header(100)보다 낮게 */
+    background: var(--white);
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
   }
   .tabnav ul{
     display:flex; gap:36px; overflow-x:auto;
@@ -214,12 +218,13 @@
   }
   .tabnav a{
     display:block; padding:18px 2px;
-    color: rgba(255,255,255,0.55);
+    color: var(--gray-600);
     font-size:15px; font-weight:600;
     border-bottom:2px solid transparent;
     white-space:nowrap;
   }
-  .tabnav a.active{ color:#fff; border-bottom-color: var(--red); }
+  .tabnav a:hover{ color: var(--gray-900); }
+  .tabnav a.active{ color: var(--black); border-bottom-color: var(--red); }
 
   /* ===== SECTION GENERIC ===== */
   section{ padding: 96px 0; }
